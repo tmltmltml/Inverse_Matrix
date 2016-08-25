@@ -1,18 +1,18 @@
 #ifndef HEADER_CORE
 #define HEADER_CORE
 #include "Fraction.h"
-void initial(Fraction **, int);                                       //初始化矩阵为n阶单位方阵
-void input(Fraction **, int);                                         //输入矩阵
-void output(Fraction **, int, int);                                   //输出矩阵
+void initial(Fraction **, int);                                       //unit the matrix
+void input(Fraction **, int);                                         //input the matrix element
+void output(Fraction **, int, int);                                   //output the matrix element
 
-bool test(Fraction **a, Fraction **b, int n);                         //测试求逆结果
-	void inverse_matrix(Fraction **a, Fraction **b, int n);               //求可逆矩阵
+bool test(Fraction **a, Fraction **b, int n);                         //test the answer if is right
+	void inverse_matrix(Fraction **a, Fraction **b, int n);               //inverse the matrix
 	void exchange(Fraction *a, Fraction *b, int col);
-		Fraction** combine(Fraction **a, Fraction ** b, int n);				  //将AB矩阵横排
-		void triDeter(Fraction **a, int line, int col);                       //化为上三角矩阵
-		void leftOne(Fraction **a, int line, int col);                        //将AB的A化为除对角线非0其他都为0的矩阵
+		Fraction** combine(Fraction **a, Fraction ** b, int n);				  //combine two N order matrixs
+		void triDeter(Fraction **a, int line, int col);                       //upper triangular matrix
+		void leftOne(Fraction **a, int line, int col);                        //make non-diagnoal element of  the left of combined matrix be 0
 		void One(Fraction **a, int line, int col);
-bool det(Fraction **a, int n);                                       //计算方阵行列式,判断是否可逆
+bool det(Fraction **a, int n);                                       //calculate N order determinant
 
-void del(Fraction **a, int n);                                       //删除二维动态数组，
+void del(Fraction **a, int n);                                       //delete the space of double dimensional array
 #endif

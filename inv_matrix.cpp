@@ -1,5 +1,4 @@
-// inv_matrix.cpp : 定义控制台应用程序的入口点。
-//加注释的作为测试文本使用，简化输入
+//commted code can get data from txt
 
 #include "stdafx.h"
 
@@ -15,7 +14,7 @@ int main()
 	//ifstream infile("data.txt");   //
 	unsigned int n;
 	try{
-		cout << "请输入方阵阶数(n < 256): ";
+		cout << "input the order(n < 256): ";
 		cin >> n;
 		if(n >= 256)
 			throw n;
