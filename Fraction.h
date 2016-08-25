@@ -24,5 +24,6 @@ public:
 
 istream& operator >>(istream &in, Fraction& a);
 ostream& operator <<(ostream &out, const Fraction& a);
+string to_string(const Fraction &a);
 
 #endif

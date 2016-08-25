@@ -1,6 +1,6 @@
-#include "stdafx.h"
 #include "Fraction.h"
 #include <iostream>
+#include <sstream>
 #include <cmath>
 using namespace std;
 
@@ -47,6 +47,13 @@ ostream& operator <<(ostream &out, const Fraction& a)
 	else
 		out << a.mol << '/' << a.den << '\t' ;
 	return out;
+}
+
+string to_string(const Fraction &a)
+{
+	ostringstream os;
+	os << a;
+	return os.str();
 }
 
 Fraction Fraction::operator /(const Fraction& a)
