@@ -1,18 +1,22 @@
 #ifndef HEADER_CORE
 #define HEADER_CORE
+#include <vector>
+#include <memory>
 #include "Fraction.h"
-void initial(Fraction **, int);                                       //unit the matrix
-void input(Fraction **, int);                                         //input the matrix element
-void output(Fraction **, int, int);                                   //output the matrix element
+#include "chill\matrix.h"
+using Matrix = Chill::Matrix<Fraction>;
 
-bool test(Fraction **a, Fraction **b, int n);                         //test the answer if is right
-	void inverse_matrix(Fraction **a, Fraction **b, int n);               //inverse the matrix
-	void exchange(Fraction *a, Fraction *b, int col);
-		Fraction** combine(Fraction **a, Fraction ** b, int n);				  //combine two N order matrixs
-		void triDeter(Fraction **a, int line, int col);                       //upper triangular matrix
-		void leftOne(Fraction **a, int line, int col);                        //make non-diagnoal element of  the left of combined matrix be 0
-		void One(Fraction **a, int line, int col);
-bool det(Fraction **a, int n);                                       //calculate N order determinant
+void initial(Matrix&);                                       //unit the matrix
+void input(Matrix&);                                         //input the matrix element
+void output(Matrix&);                                   //output the matrix element
 
-void del(Fraction **a, int n);                                       //delete the space of double dimensional array
+bool test(Matrix &a, Matrix &b, int n);                         //test the answer if is right
+void inverse_matrix(Matrix &a, Matrix &b, int n);               //inverse the matrix
+Matrix combine(Matrix &a, Matrix& b, int n);				  //combine two N order matrixs
+void triDeter(Matrix &a, int line, int col);                       //upper triangular matrix
+void leftOne(Matrix &a, int line, int col);                        //make non-diagnoal element of  the left of combined matrix be 0
+void One(Matrix &a, int line, int col);
+bool det(Matrix &a);                                       //calculate N order determinant
+
+void exchange(Fraction *a, Fraction *b, int col);
 #endif

@@ -1,7 +1,3 @@
-//commted code can get data from txt
-
-#include "stdafx.h"
-
 #include <iostream>
 #include "Fraction.h"
 #include "core.h"
@@ -13,38 +9,36 @@ int main()
 {
 	//ifstream infile("data.txt");   //
 	unsigned int n;
-	try{
+	try {
 		cout << "input the order(n < 256): ";
 		cin >> n;
-		if(n >= 256)
+		if (n >= 256)
 			throw n;
-	}catch(unsigned int){
+	}
+	catch (unsigned int) {
 		cerr << "input error!" << endl;
 		return -1;
 	}
 	//infile >> n;
-	
-	Fraction **a = new Fraction*[n], **b = new Fraction*[n];
-	for(unsigned int i = 0; i < n; ++i)
-	{
-		a[i] = new Fraction[n];
-		b[i] = new Fraction[n];
-	}
+
+	Matrix a(n, n);
+	Matrix b(n, n);
+
 	//for(unsigned int i = 0; i < n; ++i)
 		//for(unsigned int j = 0; j < n; ++j)
 			//infile >> a[i][j];
-	input(a, n); 
-	initial(b, n);
-	if(det(a, n))
+	input(a);
+	initial(b);
+	if (det(a))
 	{
-		if(test(a, b, n))
+		if (test(a, b, n))
 			cout << "The answer is correct!" << endl;
 		else
 			cout << "Sorry to get a wrong answer" << endl;
 	}
 	else
 		cerr << "matrix can't be inversed" << endl;
-	del(a, n); del(b, n);
+	
 	return 0;
 }
 
